@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header class="top">
+    <div class="header-bg">
+        <div class="container">
+            <img src="html/logo.png" alt="Логотип" class="logo">
+            <nav>
+                <ul>
+                    <li><a class="button nav-link-item" href="index.html">Главная</a></li>
+                    <li><a class="button nav-link-item" href="index.html">Направления</a></li>
+                    <li><a class="button nav-link-item" href="рег.html">Контакты</a></li>
+                    <li><a href="регестрация.html" class="button nav-link-item" target="_blank">Регистрация</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="container registrationForm">
+        <h2>Регистрация</h2>
+        
+            <form action="">
+            <div class="form-group">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required placeholder="Ваше имя">
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required placeholder="Минимум 8 символов">
+            </div>
+
+            <button type="submit">Войти</button>
+        </form>
+        
+        
+
+        <p>не зарегистрированы? <a href="#">зарегистрировать</a></p>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Пароли не совпадают");
+                return;
+            }
+
+            if (password.length < 8) {
+                alert("Пароль должен содержать не менее 8 символов");
+                return;
+            }
+
+            alert("Регистрация прошла успешно!");
+        });
+    </script>
+<footer class="down">
+    <div class="container">
+        <p>&copy; 2025 Путешествия. Все права защищены.</p>
+           <div class="social-icons">
+               <a href="#"><i class="fab fa-facebook-f"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+               <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+    </div>
+</footer>
+</body>
+
+</html>
